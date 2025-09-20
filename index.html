@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Podefied - Product Management Training</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="shortcut icon" href="images/logo-blue.svg" type="image/x-icon" />
+    <style>
+      .gold-bg {
+        background-color: #ffb236;
+      }
+      .gold-text {
+        color: #ffb236;
+      }
+      .navy-bg {
+        background-color: #001196;
+      }
+      .navy-text {
+        color: #001196;
+      }
+      .whatsapp-float {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 40px;
+        right: 40px;
+        background-color: #25d366;
+        color: #fff;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 2px 2px 3px #999;
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .sticky-header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+      }
+      .sticky-footer {
+        position: sticky;
+        bottom: 0;
+        z-index: 50;
+      }
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 100;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+      .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 500px;
+        border-radius: 8px;
+      }
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+      .close:hover,
+      .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .accordion {
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        text-align: left;
+        border: none;
+        outline: none;
+        transition: 0.4s;
+      }
+      .active,
+      .accordion:hover {
+        background-color: #f1f1f1;
+      }
+      .panel {
+        padding: 0 18px;
+        background-color: white;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+      }
+    </style>
+  </head>
+  <!-- ------------------------------------------------------------------------------- -->
+  <body class="font-sans">
+    <!-- Sticky Header with CTA -->
+    <header
+      class="sticky-header navy-bg text-white py-4 px-6 flex justify-between items-center"
+    >
+      <!-- <div class="flex items-center">
+        <img src="images/logo-white.svg" alt="Podefied Logo" class="h-10" />
+        <h1 class="text-xl font-bold">rodefied</h1>
+      </div> -->
+      <a href="/">
+        <div class="flex items-center">
+          <img src="images/logo-white.svg" alt="Podefied Logo" class="h-10" />
+          <h1 class="text-xl font-bold">rodefied</h1>
+        </div>
+      </a>
+      <a
+        href="https://docs.google.com/forms/d/e/1FAIpQLSef2xtbNBuGSkIMh0x4yekVsIBCXpbVgPD0yq9kIbTcxXYVnA/viewform?usp=header"
+        target="_blank"
+        class="gold-bg text-black font-bold py-2 px-6 rounded-full hover:bg-yellow-500 transition"
+      >
+        Enroll Now
+      </a>
+    </header>
+    <!-- Sticky Header with CTA
+    <header class="sticky-header navy-bg text-white py-4 px-6 flex justify-between items-center">
+        <div class="flex items-center">
+            <img src="images/logo-white.svg" alt="Podefied Logo" class="h-10">
+            <h1 class="text-xl font-bold">rodefied</h1>
+        </div>
+        <button onclick="openModal()" class="gold-bg text-black font-bold py-2 px-6 rounded-full hover:bg-yellow-500 transition">Enroll Now</button>
+    </header> -->
+    <!-- END OF STICKY HEADER WITH CTA -->
+
+    <!-- Hero Section -->
+    <section class="relative navy-bg text-white py-20 px-6">
+      <div class="container mx-auto flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+            Become a Product Manager with Confidence
+          </h1>
+          <p class="text-xl mb-8">
+            All the knowledge you need to be certified, hirable and successful
+            as a Product Manager in one place.
+          </p>
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSef2xtbNBuGSkIMh0x4yekVsIBCXpbVgPD0yq9kIbTcxXYVnA/viewform?usp=header"
+            target="_blank"
+            class="gold-bg text-black font-bold py-3 px-8 rounded-full hover:bg-yellow-500 transition text-lg inline-block"
+          >
+            Enroll Now
+          </a>
+        </div>
+        <div class="md:w-1/2" data-aos="fade-left">
+          <img
+            src="http://static.photos/education/640x360/1"
+            alt="Students learning"
+            class="rounded-lg shadow-xl"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Hero Section
+    <section class="relative navy-bg text-white py-20 px-6">
+      <div class="container mx-auto flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+            Become a Product Manager with Confidence
+          </h1>
+          <p class="text-xl mb-8">
+            All the knowledge you need to be certified, hirable and successful
+            as a Product Manager in one place.
+          </p>
+          <button
+            onclick="openModal()"
+            class="gold-bg text-black font-bold py-3 px-8 rounded-full hover:bg-yellow-500 transition text-lg"
+          >
+            Enroll Now
+          </button>
+        </div>
+        <div class="md:w-1/2" data-aos="fade-left">
+          <img
+            src="http://static.photos/education/640x360/1"
+            alt="Students learning"
+            class="rounded-lg shadow-xl"
+          />
+        </div>
+      </div>
+    </section> -->
+    <!-- END OF HERO SECTION -->
+
+    <!-- About Section -->
+    <section class="py-20 px-6 bg-gray-50">
+      <div class="container mx-auto">
+        <h2
+          class="text-3xl font-bold navy-text text-center mb-16"
+          data-aos="fade-up"
+        >
+          Learn Product Management the Practical Way
+        </h2>
+        <div class="flex flex-col md:flex-row">
+          <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
+            <p class="text-lg mb-8">
+              Prodified is a platform that transforms aspiring product managers
+              into job-ready professionals. By combining structured learning,
+              real-world projects, and career support in one place you are
+              equipped with all the knowledge you need to become a successful
+              Product Manager.
+            </p>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h3 class="text-xl font-bold navy-text mb-4">
+                Why Choose Podified?
+              </h3>
+              <p>
+                Prodefied is committed to ensuring you graduate with practical
+                skills and knowledge that would help you stand out in the job
+                market and thrive in any company you work.
+              </p>
+            </div>
+          </div>
+          <div class="md:w-1/2" data-aos="fade-left">
+            <img
+              src="http://static.photos/workspace/640x360/1"
+              alt="Team working"
+              class="rounded-lg shadow-xl"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END OF ABOUT SECTION -->
+
+    <!-- Program Features -->
+    <section class="py-20 px-6">
+      <div class="container mx-auto">
+        <h2
+          class="text-3xl font-bold navy-text text-center mb-16"
+          data-aos="fade-up"
+        >
+          Program Features
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div
+            class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition"
+            data-aos="fade-up"
+          >
+            <i data-feather="check-circle" class="gold-text w-12 h-12 mb-4"></i>
+            <h3 class="text-xl font-bold mb-2">Weekly Assessments</h3>
+            <p>Regular evaluations to track your progress and understanding.</p>
+          </div>
+          <div
+            class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <i data-feather="cpu" class="gold-text w-12 h-12 mb-4"></i>
+            <h3 class="text-xl font-bold mb-2">AI Integration Tools</h3>
+            <p>Build & rebrand your personal website with AI.</p>
+          </div>
+          <div
+            class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <i data-feather="briefcase" class="gold-text w-12 h-12 mb-4"></i>
+            <h3 class="text-xl font-bold mb-2">Capstone Project</h3>
+            <p>Comprehensive final project to showcase your skills.</p>
+          </div>
+          <div
+            class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition"
+            data-aos="fade-up"
+          >
+            <i data-feather="users" class="gold-text w-12 h-12 mb-4"></i>
+            <h3 class="text-xl font-bold mb-2">Internship Project</h3>
+            <p>Real-world experience working on actual projects.</p>
+          </div>
+          <div
+            class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <i data-feather="file-text" class="gold-text w-12 h-12 mb-4"></i>
+            <h3 class="text-xl font-bold mb-2">Personal Portfolio Build</h3>
+            <p>Create a professional portfolio to showcase your work.</p>
+          </div>
+          <div
+            class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <i data-feather="award" class="gold-text w-12 h-12 mb-4"></i>
+            <h3 class="text-xl font-bold mb-2">Career Coaching</h3>
+            <p>CV/LinkedIn Revamp to make you stand out to recruiters.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Program Benefits -->
+    <section class="py-20 px-6 bg-gray-50">
+      <div class="container mx-auto">
+        <h2
+          class="text-3xl font-bold navy-text text-center mb-16"
+          data-aos="fade-up"
+        >
+          What You Leave With
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up">
+            <i data-feather="folder" class="gold-text w-10 h-10 mb-4"></i>
+            <h3 class="text-xl font-bold mb-2">3 completed projects</h3>
+            <p>
+              Capstone, Internship, and Portfolio projects to showcase your
+              skills.
+            </p>
+          </div>
+          <div
+            class="bg-white p-6 rounded-lg shadow-md"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <i data-feather="cpu" class="gold-text w-10 h-10 mb-4"></i>
+            <h3 class="text-xl font-bold mb-2">
+              Mastery of AI tools & PM processes
+            </h3>
+            <p>
+              Become proficient with industry-standard tools and methodologies.
+            </p>
+          </div>
+          <div
+            class="bg-white p-6 rounded-lg shadow-md"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <i data-feather="file-text" class="gold-text w-10 h-10 mb-4"></i>
+            <h3 class="text-xl font-bold mb-2">
+              A polished CV & LinkedIn profile
+            </h3>
+            <p>Stand out to recruiters with professional career materials.</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up">
+            <i data-feather="users" class="gold-text w-10 h-10 mb-4"></i>
+            <h3 class="text-xl font-bold mb-2">
+              Networking with peers & mentors
+            </h3>
+            <p>Build valuable connections in the industry.</p>
+          </div>
+          <div
+            class="bg-white p-6 rounded-lg shadow-md"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <i data-feather="award" class="gold-text w-10 h-10 mb-4"></i>
+            <h3 class="text-xl font-bold mb-2">
+              Confidence to ace your first PM role
+            </h3>
+            <p>Graduate ready to take on product management challenges.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="py-20 px-6">
+      <div class="container mx-auto">
+        <div
+          class="gold-bg text-black p-8 rounded-lg shadow-xl max-w-3xl mx-auto"
+          data-aos="zoom-in"
+        >
+          <h2 class="text-3xl font-bold mb-6 text-center">Program Fee</h2>
+          <div class="text-center mb-6">
+            <span class="text-5xl font-bold">₦200,000</span>
+            <span class="text-xl">only</span>
+          </div>
+          <div class="bg-white p-6 rounded-lg mb-6">
+            <h3 class="text-xl font-bold navy-text mb-4">Payment Details</h3>
+            <p class="mb-2">
+              <span class="font-semibold">Account Name:</span> PRODEFIED LTD
+            </p>
+            <p class="mb-2">
+              <span class="font-semibold">Account Number:</span> 1308101130
+            </p>
+            <p class="mb-2">
+              <span class="font-semibold">Bank:</span> PROVIDUS BANK
+            </p>
+          </div>
+          <p class="text-center text-xl font-semibold">
+            Affordable. Practical. Worth it.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- ------------------------------------ -->
+    <!-- How It Works -->
+    <section class="py-20 px-6 bg-gray-50">
+      <div class="container mx-auto">
+        <h2
+          class="text-3xl font-bold navy-text text-center mb-16"
+          data-aos="fade-up"
+        >
+          How It Works
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+          <div
+            class="bg-white p-6 rounded-lg shadow-md text-center"
+            data-aos="fade-up"
+          >
+            <div
+              class="gold-bg text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4"
+            >
+              <span class="text-2xl font-bold">1</span>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Apply</h3>
+            <p>Fill the form and make payment</p>
+          </div>
+          <div
+            class="bg-white p-6 rounded-lg shadow-md text-center"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div
+              class="gold-bg text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4"
+            >
+              <span class="text-2xl font-bold">2</span>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Learn</h3>
+            <p>Attend live sessions + weekly assessments</p>
+          </div>
+          <div
+            class="bg-white p-6 rounded-lg shadow-md text-center"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div
+              class="gold-bg text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4"
+            >
+              <span class="text-2xl font-bold">3</span>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Internship</h3>
+            <p>Work on real projects with peers</p>
+          </div>
+          <div
+            class="bg-white p-6 rounded-lg shadow-md text-center"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div
+              class="gold-bg text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4"
+            >
+              <span class="text-2xl font-bold">4</span>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Career Boost</h3>
+            <p>Coaching + CV/LinkedIn Revamp</p>
+          </div>
+          <div
+            class="bg-white p-6 rounded-lg shadow-md text-center"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div
+              class="gold-bg text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4"
+            >
+              <span class="text-2xl font-bold">5</span>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Job Ready</h3>
+            <p>Graduate with confidence & a portfolio</p>
+          </div>
+        </div>
+        <div class="text-center mt-12" data-aos="fade-up">
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSef2xtbNBuGSkIMh0x4yekVsIBCXpbVgPD0yq9kIbTcxXYVnA/viewform?usp=header"
+            target="_blank"
+            class="gold-bg text-black font-bold py-3 px-8 rounded-full hover:bg-yellow-500 transition text-lg inline-block"
+          >
+            Apply Now
+          </a>
+          <!-- <button
+            onclick="openModal()"
+            class="gold-bg text-black font-bold py-3 px-8 rounded-full hover:bg-yellow-500 transition text-lg"
+          >
+            Apply Now
+          </button> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 px-6">
+      <div class="container mx-auto">
+        <h2
+          class="text-3xl font-bold navy-text text-center mb-8"
+          data-aos="fade-up"
+        >
+          What Our Students Say
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up">
+            <div class="flex items-center mb-4">
+              <img
+                src="http://static.photos/people/60x60/1"
+                alt="Student"
+                class="w-12 h-12 rounded-full mr-4"
+              />
+              <div>
+                <h4 class="font-bold">Sarah Johnson</h4>
+                <p class="text-sm gold-text">Product Manager @Tech Startup</p>
+              </div>
+            </div>
+            <p>
+              "I landed my first PM role just 3 months after graduating. The
+              capstone project was my golden ticket!"
+            </p>
+          </div>
+          <div
+            class="bg-white p-6 rounded-lg shadow-md"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="flex items-center mb-4">
+              <img
+                src="http://static.photos/people/60x60/2"
+                alt="Student"
+                class="w-12 h-12 rounded-full mr-4"
+              />
+              <div>
+                <h4 class="font-bold">Michael Chen</h4>
+                <p class="text-sm gold-text">Associate PM @FinTech</p>
+              </div>
+            </div>
+            <p>
+              "From zero PM experience to handling real projects in 6 months -
+              Podefied's internship program was transformative."
+            </p>
+          </div>
+          <div
+            class="bg-white p-6 rounded-lg shadow-md"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="flex items-center mb-4">
+              <img
+                src="http://static.photos/people/60x60/3"
+                alt="Student"
+                class="w-12 h-12 rounded-full mr-4"
+              />
+              <div>
+                <h4 class="font-bold">Amina Okafor</h4>
+                <p class="text-sm gold-text">Product Owner @EdTech</p>
+              </div>
+            </div>
+            <p>
+              "The career coaching helped me negotiate a 40% higher salary for
+              my first PM position."
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------------------- -->
+
+    <!-- FAQ Section -->
+    <section class="py-20 px-6 bg-gray-50" id="faq">
+      <div class="container mx-auto max-w-4xl">
+        <h2
+          class="text-3xl font-bold navy-text text-center mb-16"
+          data-aos="fade-up"
+        >
+          Frequently Asked Questions
+        </h2>
+
+        <button class="accordion navy-bg text-white font-bold">
+          Can I become a product manager even if I have no tech background?
+        </button>
+        <div class="panel">
+          <p class="p-4">
+            Yes the course modules are structured for beginners with no tech
+            experience at all.
+          </p>
+        </div>
+
+        <button class="accordion navy-bg text-white font-bold mt-4">
+          Do I need to know how to code to learn Product Management?
+        </button>
+        <div class="panel">
+          <p class="p-4">
+            No you don't need to know how to code. All you need is the
+            willingness and commitment to learn and the discipline to stay
+            consistent.
+          </p>
+        </div>
+
+        <button class="accordion navy-bg text-white font-bold mt-4">
+          How is the learning environment structured?
+        </button>
+        <div class="panel">
+          <p class="p-4">(Virtual or physical)</p>
+        </div>
+
+        <button class="accordion navy-bg text-white font-bold mt-4">
+          What is the payment plan?
+        </button>
+        <div class="panel">
+          <p class="p-4">(Installments or complete payment)</p>
+        </div>
+
+        <button class="accordion navy-bg text-white font-bold mt-4">
+          Who can join Prodefied's training?
+        </button>
+        <div class="panel">
+          <p class="p-4">
+            Students, Graduates, career switchers, Professionals who: • Want to
+            break into tech without coding. • Want to become hirable in the eyes
+            of recruiters. • Want structured guidance, mentorship, and real
+            projects
+          </p>
+        </div>
+
+        <button class="accordion navy-bg text-white font-bold mt-4">
+          What industries can I work in after graduating from Prodefied?
+        </button>
+        <div class="panel">
+          <p class="p-4">
+            As a Prodefied graduate you can work in different industries ranging
+            from: • Edtech • Health tech • Fintech • SAAS • (Add other
+            applicable industries)
+          </p>
+        </div>
+
+        <button class="accordion navy-bg text-white font-bold mt-4">
+          When is the next cohort starting?
+        </button>
+        <div class="panel">
+          <p class="p-4">
+            The first cohort will officially start on the 3rd of October 2025
+            and will run till (end date)
+          </p>
+        </div>
+
+        <button class="accordion navy-bg text-white font-bold mt-4">
+          Is it guaranteed that I'll get a job immediately after graduating?
+        </button>
+        <div class="panel">
+          <p class="p-4">
+            Prodefied does not guarantee immediate employment. But with
+            everything you learn from the program and personal active
+            implementation you can standout in competitive job market to
+            recruiters and boost your chances of getting hired
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="py-20 px-6">
+      <div class="container mx-auto">
+        <h2
+          class="text-3xl font-bold navy-text text-center mb-16"
+          data-aos="fade-up"
+        >
+          Insights & Resources
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden"
+            data-aos="fade-up"
+          >
+            <img
+              src="http://static.photos/education/400x225/1"
+              alt="Blog post"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">
+                5 Essential Skills for Aspiring Product Managers
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Learn the key competencies that will set you apart in the
+                competitive PM job market.
+              </p>
+              <a href="#" class="gold-text font-semibold">Read More →</a>
+            </div>
+          </div>
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <img
+              src="http://static.photos/technology/400x225/1"
+              alt="Blog post"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">
+                How AI is Transforming Product Management
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Discover the latest AI tools that are revolutionizing the way
+                products are built and managed.
+              </p>
+              <a href="#" class="gold-text font-semibold">Read More →</a>
+            </div>
+          </div>
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <img
+              src="http://static.photos/workspace/400x225/1"
+              alt="Blog post"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">
+                Building Your First Product Portfolio
+              </h3>
+              <p class="text-gray-600 mb-4">
+                A step-by-step guide to creating a portfolio that showcases your
+                PM skills effectively.
+              </p>
+              <a href="#" class="gold-text font-semibold">Read More →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ------------------------------------- -->
+
+    <!-- Contact Section -->
+    <section class="py-20 px-6 navy-bg text-white">
+      <div class="container mx-auto max-w-4xl text-center">
+        <h2 class="text-3xl font-bold mb-8" data-aos="fade-up">Get In Touch</h2>
+        <p class="text-xl mb-8" data-aos="fade-up">
+          Have questions about our program? We're here to help!
+        </p>
+        <div
+          class="flex flex-col md:flex-row justify-center gap-8 mb-12"
+          data-aos="fade-up"
+        >
+          <!-- <div>
+            <i data-feather="mail" class="w-8 h-8 mb-2 mx-auto"></i>
+            <p>
+              Email:
+              <a
+                href="mailto:hello@prodefied.com"
+                class="hover:text-yellow-400"
+              >
+                hello@prodefied.com
+              </a>
+            </p>
+          </div> -->
+
+          <a
+            href="mailto:hello@prodefied.com"
+            class="block text-center hover:text-yellow-400"
+          >
+            <div>
+              <i data-feather="mail" class="w-8 h-8 mb-2 mx-auto"></i>
+              <p>Email: hello@prodefied.com</p>
+            </div>
+          </a>
+          <div>
+            <a
+              href="https://wa.link/st5dzz"
+              target="_blank"
+              class="gold-bg text-black font-bold py-3 px-6 rounded-full hover:bg-yellow-500 transition inline-block"
+            >
+              Chat with Us on WhatsApp
+            </a>
+          </div>
+        </div>
+        <div class="flex justify-center gap-6" data-aos="fade-up">
+          <a href="https://www.facebook.com/share/1C5mHGsVEq/" target="_blank"
+            ><i
+              data-feather="facebook"
+              class="w-6 h-6 hover:text-yellow-400"
+            ></i
+          ></a>
+          <a
+            href="https://www.instagram.com/prodefied?igsh=dXZhYW5rdjRhc2dj"
+            target="_blank"
+            ><i
+              data-feather="instagram"
+              class="w-6 h-6 hover:text-yellow-400"
+            ></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/company/prodefied.com/"
+            target="_blank"
+            ><i
+              data-feather="linkedin"
+              class="w-6 h-6 hover:text-yellow-400"
+            ></i
+          ></a>
+          <a
+            href="https://x.com/prodefied?t=C-TTqyE5t-_Dmzd7QAOG7w&s=09"
+            target="_blank"
+            ><i data-feather="twitter" class="w-6 h-6 hover:text-yellow-400"></i
+          ></a>
+          <a
+            href="https://youtube.com/@prodefied?si=gs3dWc17bCoxBvDA"
+            target="_blank"
+            ><i data-feather="youtube" class="w-6 h-6 hover:text-yellow-400"></i
+          ></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+     <footer class="py-12 px-6 bg-gray-900 text-white relative">
+  <div class="container mx-auto">
+    <div class="flex flex-col md:flex-row justify-between items-center">
+      <div class="mb-6 md:mb-0">
+        <p class="text-lg">
+          Prodefied © 2025 | Learn. Build. Launch Your Career.
+        </p>
+      </div>
+
+      <!-- Contact Us Section -->
+      <div class="flex flex-col md:flex-row gap-6 relative">
+        <a href="#" id="contactTrigger" class="hover:underline">Contact Us</a>
+
+        <!-- Contact Us Pop-up -->
+        <div
+          id="contactPopup"
+          class="hidden absolute right-0 top-full mt-2 w-72 bg-white text-black border border-gray-200 rounded-md shadow-lg p-4 z-50"
+        >
+          <div class="flex items-start justify-between mb-3">
+            <p class="text-sm text-gray-700">Reach out to us on our socials</p>
+            <button
+              id="closePopup"
+              class="text-gray-500 hover:text-red-500"
+              aria-label="Close contact menu"
+            >
+              ✕
+            </button>
+          </div>
+
+          <div class="flex items-center justify-around gap-4">
+            <a
+              href="mailto:hello@prodefied.com"
+              target="_blank"
+              class="p-2 rounded hover:bg-gray-100 transition"
+              aria-label="Gmail"
+            >
+              <img src="assets/icons/contact-us/gmail.svg" alt="Gmail" class="w-6 h-6" />
+            </a>
+            <a
+              href="https://wa.link/st5dzz"
+              target="_blank"
+              class="p-2 rounded hover:bg-gray-100 transition"
+              aria-label="Whatsapp"
+            >
+              <img src="assets/icons/contact-us/whatsapp.svg" alt="Whatsapp" class="w-6 h-6" />
+            </a>
+            <a
+              href="https://www.instagram.com/prodefied?igsh=dXZhYW5rdjRhc2dj"
+              target="_blank"
+              class="p-2 rounded hover:bg-gray-100 transition"
+              aria-label="Instagram"
+            >
+              <img src="assets/icons/contact-us/instagram.svg" alt="Instagram" class="w-6 h-6" />
+            </a>
+            <a
+              href="https://x.com/prodefied?t=C-TTqyE5t-_Dmzd7QAOG7w&s=09"
+              target="_blank"
+              class="p-2 rounded hover:bg-gray-100 transition"
+              aria-label="X/Twitter"
+            >
+              <img src="assets/icons/contact-us/x.svg" alt="X/Twitter" class="w-6 h-6" />
+            </a>
+            <a
+              href="https://www.linkedin.com/company/prodefied.com/"
+              target="_blank"
+              class="p-2 rounded hover:bg-gray-100 transition"
+              aria-label="LinkedIn"
+            >
+              <img src="assets/icons/contact-us/linkedin.svg" alt="LinkedIn" class="w-6 h-6" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="mt-8 pt-8 border-t border-gray-800 text-center">
+      <p>Subscribe to our newsletter for updates and insights</p>
+      <div class="mt-4 max-w-md mx-auto flex">
+        <input
+          type="email"
+          placeholder="Your email address"
+          class="flex-grow px-4 py-2 rounded-l text-black"
+        />
+        <button
+          class="gold-bg text-black font-bold px-6 py-2 rounded-r hover:bg-yellow-500 transition"
+        >
+          Subscribe
+        </button>
+      </div>
+    </div>
+  </div>
+</footer>
+    <!-- <footer class="py-12 px-6 bg-gray-900 text-white">
+      <div class="container mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-6 md:mb-0">
+            <p class="text-lg">
+              Prodefied © 2025 | Learn. Build. Launch Your Career.
+            </p>
+          </div>
+          <div class="flex flex-col md:flex-row gap-6">
+            <a href="#" class="hover:underline">Contact Us</a>
+          </div>
+        </div>
+        <div class="mt-8 pt-8 border-t border-gray-800 text-center">
+          <p>Subscribe to our newsletter for updates and insights</p>
+          <div class="mt-4 max-w-md mx-auto flex">
+            <input
+              type="email"
+              placeholder="Your email address"
+              class="flex-grow px-4 py-2 rounded-l text-black"
+            />
+            <button
+              class="gold-bg text-black font-bold px-6 py-2 rounded-r hover:bg-yellow-500 transition"
+            >
+              Subscribe
+            </button>
+          </div>
+        </div>
+      </div>
+    </footer> -->
+
+    <!-- Sticky Footer CTA -->
+    <div class="sticky-footer navy-bg text-white py-4 px-6 text-center">
+      <a
+        href="https://docs.google.com/forms/d/e/1FAIpQLSef2xtbNBuGSkIMh0x4yekVsIBCXpbVgPD0yq9kIbTcxXYVnA/viewform?usp=header"
+        target="_blank"
+        class="gold-bg text-black font-bold py-2 px-8 rounded-full hover:bg-yellow-500 transition inline-block"
+      >
+        Enroll Now
+      </a>
+      <!-- <button
+        onclick="openModal()"
+        class="gold-bg text-black font-bold py-2 px-8 rounded-full hover:bg-yellow-500 transition"
+      >
+        Enroll Now
+      </button> -->
+    </div>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.link/st5dzz" target="_blank" class="whatsapp-float">
+      <i data-feather="message-circle"></i>
+    </a>
+
+    <!-- Modal -->
+    <div
+      id="enrollModal"
+      class="modal fixed inset-0 hidden items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm z-50"
+    >
+      <div
+        id="enrollForm"
+        class="modal-content bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 relative transform transition-all duration-300 scale-95"
+      >
+        <!-- Close button -->
+        <button
+          onclick="closeModal()"
+          class="close absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-2xl font-bold"
+        >
+          &times;
+        </button>
+
+        <!-- Header -->
+        <h2 class="text-2xl font-extrabold navy-text mb-4 text-center">
+          Don't Learn Alone
+        </h2>
+
+        <!-- Body -->
+        <p class="mb-6 text-gray-700 text-center leading-relaxed">
+          Join our free
+          <span class="font-semibold">Prodefied WhatsApp Community</span> and
+          connect with other future Product Managers. Ask questions, share
+          ideas, and stay updated on the program.
+        </p>
+
+        <!-- CTA Button -->
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSef2xtbNBuGSkIMh0x4yekVsIBCXpbVgPD0yq9kIbTcxXYVnA/viewform?usp=header"
+          target="_blank"
+          class="gold-bg text-black font-bold py-3 px-6 rounded-full hover:bg-yellow-500 transition w-full block text-center shadow-md"
+        >
+          Join the Community
+        </a>
+      </div>
+    </div>
+
+    <script>
+      // Initialize AOS
+      AOS.init({
+        duration: 800,
+        once: true,
+      });
+
+      // Initialize Feather Icons
+      feather.replace();
+
+      const trigger = document.getElementById("contactTrigger");
+  const popup = document.getElementById("contactPopup");
+  const closeBtn = document.getElementById("closePopup");
+
+  trigger.addEventListener("click", function (e) {
+    e.preventDefault();
+    popup.classList.toggle("hidden");
+  });
+
+  closeBtn.addEventListener("click", function () {
+    popup.classList.add("hidden");
+  });
+
+  // Optional: close popup when clicking outside
+  document.addEventListener("click", function (e) {
+    if (!popup.contains(e.target) && !trigger.contains(e.target)) {
+      popup.classList.add("hidden");
+    }
+  });
+
+      // Modal functions
+      function openModal() {
+        document.getElementById("enrollModal").style.display = "block";
+      }
+
+      function closeModal() {
+        document.getElementById("enrollModal").style.display = "none";
+        document.getElementById("successMessage").classList.add("hidden");
+        document.getElementById("enrollForm").reset();
+      }
+
+      // Close modal when clicking outside
+      window.onclick = function (event) {
+        const modal = document.getElementById("enrollModal");
+        if (event.target == modal) {
+          closeModal();
+        }
+      };
+
+      // Form submission
+      document
+        .getElementById("enrollForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          // Here you would normally send the form data to the server
+          // For demo purposes, we'll just show the success message
+          document.getElementById("successMessage").classList.remove("hidden");
+          document.getElementById("enrollForm").reset();
+
+          // In a real implementation, you would use fetch or XMLHttpRequest to send the data
+          // fetch('mailto:hello@prodefied.com', {
+          //     method: 'POST',
+          //     body: new FormData(this)
+          // })
+          // .then(response => {
+          //     document.getElementById('successMessage').classList.remove('hidden');
+          //     document.getElementById('enrollForm').reset();
+          // })
+          // .catch(error => {
+          //     alert('Error submitting form. Please try again.');
+          // });
+        });
+
+      // Accordion functionality
+      const acc = document.getElementsByClassName("accordion");
+      for (let i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+          this.classList.toggle("active");
+          const panel = this.nextElementSibling;
+          if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+          } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+          }
+        });
+      }
+
+      // Auto-open modal when reaching FAQ section
+      window.addEventListener("scroll", function () {
+        const faqSection = document.getElementById("faq");
+        const faqPosition = faqSection.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 2;
+
+        if (faqPosition < screenPosition) {
+          // Only open once per session
+          if (!sessionStorage.getItem("modalShown")) {
+            openModal();
+            sessionStorage.setItem("modalShown", "true");
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
