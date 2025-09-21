@@ -816,128 +816,98 @@
     </section>
 
     <!-- Footer -->
-     <footer class="py-12 px-6 bg-gray-900 text-white relative">
-  <div class="container mx-auto">
-    <div class="flex flex-col md:flex-row justify-between items-center">
-      <div class="mb-6 md:mb-0">
-        <p class="text-lg">
-          Prodefied © 2025 | Learn. Build. Launch Your Career.
-        </p>
-      </div>
-
-      <!-- Contact Us Section -->
-      <div class="flex flex-col md:flex-row gap-6 relative">
-        <a href="#" id="contactTrigger" class="hover:underline">Contact Us</a>
-
-        <!-- Contact Us Pop-up -->
-        <div
-          id="contactPopup"
-          class="hidden absolute right-0 top-full mt-2 w-72 bg-white text-black border border-gray-200 rounded-md shadow-lg p-4 z-50"
-        >
-          <div class="flex items-start justify-between mb-3">
-            <p class="text-sm text-gray-700">Reach out to us on our socials</p>
-            <button
-              id="closePopup"
-              class="text-gray-500 hover:text-red-500"
-              aria-label="Close contact menu"
-            >
-              ✕
-            </button>
-          </div>
-
-          <div class="flex items-center justify-around gap-4">
-            <a
-              href="mailto:hello@prodefied.com"
-              target="_blank"
-              class="p-2 rounded hover:bg-gray-100 transition"
-              aria-label="Gmail"
-            >
-              <img src="assets/icons/contact-us/gmail.svg" alt="Gmail" class="w-6 h-6" />
-            </a>
-            <a
-              href="https://wa.link/st5dzz"
-              target="_blank"
-              class="p-2 rounded hover:bg-gray-100 transition"
-              aria-label="Whatsapp"
-            >
-              <img src="assets/icons/contact-us/whatsapp.svg" alt="Whatsapp" class="w-6 h-6" />
-            </a>
-            <a
-              href="https://www.instagram.com/prodefied?igsh=dXZhYW5rdjRhc2dj"
-              target="_blank"
-              class="p-2 rounded hover:bg-gray-100 transition"
-              aria-label="Instagram"
-            >
-              <img src="assets/icons/contact-us/instagram.svg" alt="Instagram" class="w-6 h-6" />
-            </a>
-            <a
-              href="https://x.com/prodefied?t=C-TTqyE5t-_Dmzd7QAOG7w&s=09"
-              target="_blank"
-              class="p-2 rounded hover:bg-gray-100 transition"
-              aria-label="X/Twitter"
-            >
-              <img src="assets/icons/contact-us/x.svg" alt="X/Twitter" class="w-6 h-6" />
-            </a>
-            <a
-              href="https://www.linkedin.com/company/prodefied.com/"
-              target="_blank"
-              class="p-2 rounded hover:bg-gray-100 transition"
-              aria-label="LinkedIn"
-            >
-              <img src="assets/icons/contact-us/linkedin.svg" alt="LinkedIn" class="w-6 h-6" />
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Newsletter -->
-    <div class="mt-8 pt-8 border-t border-gray-800 text-center">
-      <p>Subscribe to our newsletter for updates and insights</p>
-      <div class="mt-4 max-w-md mx-auto flex">
-        <input
-          type="email"
-          placeholder="Your email address"
-          class="flex-grow px-4 py-2 rounded-l text-black"
-        />
-        <button
-          class="gold-bg text-black font-bold px-6 py-2 rounded-r hover:bg-yellow-500 transition"
-        >
-          Subscribe
-        </button>
-      </div>
-    </div>
-  </div>
-</footer>
-    <!-- <footer class="py-12 px-6 bg-gray-900 text-white">
+    <footer class="py-12 px-6 bg-gray-900 text-white relative">
       <div class="container mx-auto">
         <div class="flex flex-col md:flex-row justify-between items-center">
-          <div class="mb-6 md:mb-0">
-            <p class="text-lg">
-              Prodefied © 2025 | Learn. Build. Launch Your Career.
+          <!-- Left side -->
+          <div class="mb-6 md:mb-0 text-center md:text-left">
+            <p class="text-lg font-medium">
+              Prodefied © 2025 |
+              <span class="text-yellow-400"
+                >Learn. Build. Launch Your Career.</span
+              >
             </p>
           </div>
-          <div class="flex flex-col md:flex-row gap-6">
-            <a href="#" class="hover:underline">Contact Us</a>
-          </div>
-        </div>
-        <div class="mt-8 pt-8 border-t border-gray-800 text-center">
-          <p>Subscribe to our newsletter for updates and insights</p>
-          <div class="mt-4 max-w-md mx-auto flex">
-            <input
-              type="email"
-              placeholder="Your email address"
-              class="flex-grow px-4 py-2 rounded-l text-black"
-            />
-            <button
-              class="gold-bg text-black font-bold px-6 py-2 rounded-r hover:bg-yellow-500 transition"
+
+          <!-- Contact Us Section -->
+          <div class="flex flex-col md:flex-row gap-6 relative">
+            <a
+              href="#"
+              id="contactTrigger"
+              class="hover:text-yellow-400 font-semibold transition"
             >
-              Subscribe
-            </button>
+              Contact Us
+            </a>
+
+            <!-- Contact Us Pop-up -->
+            <div
+              id="contactPopup"
+              class="hidden absolute right-0 bottom-full mb-3 w-72 bg-white text-gray-800 border border-gray-200 rounded-lg shadow-xl p-5 z-50"
+            >
+              <div class="flex items-start justify-between mb-4">
+                <p class="text-sm font-medium text-gray-700">
+                  Reach out to us on our socials
+                </p>
+                <button
+                  id="closePopup"
+                  class="text-gray-400 hover:text-red-500 transition"
+                  aria-label="Close contact menu"
+                >
+                  ✕
+                </button>
+              </div>
+
+              <!-- Social Icons -->
+              <div class="flex flex-wrap justify-center gap-4">
+                <a
+                  href="mailto:hello@prodefied.com"
+                  target="_blank"
+                  class="flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 hover:bg-yellow-100 transition"
+                  aria-label="Gmail"
+                >
+                  <i data-feather="mail" class="w-5 h-5 text-red-500"></i>
+                </a>
+                <a
+                  href="https://wa.link/st5dzz"
+                  target="_blank"
+                  class="flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 hover:bg-green-100 transition"
+                  aria-label="Whatsapp"
+                >
+                  <i
+                    data-feather="message-circle"
+                    class="w-5 h-5 text-green-500"
+                  ></i>
+                </a>
+                <a
+                  href="https://www.instagram.com/prodefied"
+                  target="_blank"
+                  class="flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 hover:bg-pink-100 transition"
+                  aria-label="Instagram"
+                >
+                  <i data-feather="camera" class="w-5 h-5 text-pink-500"></i>
+                </a>
+                <a
+                  href="https://x.com/prodefied"
+                  target="_blank"
+                  class="flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 transition"
+                  aria-label="X/Twitter"
+                >
+                  <i data-feather="twitter" class="w-5 h-5 text-black"></i>
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/prodefied.com/"
+                  target="_blank"
+                  class="flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 hover:bg-blue-100 transition"
+                  aria-label="LinkedIn"
+                >
+                  <i data-feather="linkedin" class="w-5 h-5 text-blue-600"></i>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </footer> -->
+    </footer>
 
     <!-- Sticky Footer CTA -->
     <div class="sticky-footer navy-bg text-white py-4 px-6 text-center">
@@ -948,12 +918,6 @@
       >
         Enroll Now
       </a>
-      <!-- <button
-        onclick="openModal()"
-        class="gold-bg text-black font-bold py-2 px-8 rounded-full hover:bg-yellow-500 transition"
-      >
-        Enroll Now
-      </button> -->
     </div>
 
     <!-- WhatsApp Float Button -->
@@ -1013,24 +977,24 @@
       feather.replace();
 
       const trigger = document.getElementById("contactTrigger");
-  const popup = document.getElementById("contactPopup");
-  const closeBtn = document.getElementById("closePopup");
+      const popup = document.getElementById("contactPopup");
+      const closeBtn = document.getElementById("closePopup");
 
-  trigger.addEventListener("click", function (e) {
-    e.preventDefault();
-    popup.classList.toggle("hidden");
-  });
+      trigger.addEventListener("click", function (e) {
+        e.preventDefault();
+        popup.classList.toggle("hidden");
+      });
 
-  closeBtn.addEventListener("click", function () {
-    popup.classList.add("hidden");
-  });
+      closeBtn.addEventListener("click", function () {
+        popup.classList.add("hidden");
+      });
 
-  // Optional: close popup when clicking outside
-  document.addEventListener("click", function (e) {
-    if (!popup.contains(e.target) && !trigger.contains(e.target)) {
-      popup.classList.add("hidden");
-    }
-  });
+      // Optional: close popup when clicking outside
+      document.addEventListener("click", function (e) {
+        if (!popup.contains(e.target) && !trigger.contains(e.target)) {
+          popup.classList.add("hidden");
+        }
+      });
 
       // Modal functions
       function openModal() {
